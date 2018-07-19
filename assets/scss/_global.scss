@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Overpass+Mono:700');
+@import url('https://fonts.googleapis.com/css?family=Overpass:300,700');
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch; /* Lets it scroll lazy */
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $secondary-font;
+  color: $base;
+}
+
+h1 {
+  font-family: $primary-font;
+  margin: 0 0 1rem;
+}
+
+a,
+a:visited {
+  color: $primary;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+.container {
+  max-width: 1168px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.5rem;
+}
