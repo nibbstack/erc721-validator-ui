@@ -78,7 +78,7 @@ import TransitionExpand from '~/components/TransitionExpand';
   export default {
     data () {
       return {
-        contract: '0xb57756d92bd170a66b4f361eafbfd13e625372c2',
+        contract: '',
         state: "inital",
         status: "",
         sanity: { 

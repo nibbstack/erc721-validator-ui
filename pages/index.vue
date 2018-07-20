@@ -18,10 +18,10 @@
 
     <Arrow/>
     <BasicValidator/>
-    <Arrow :transparent="true" class="mt-3" />
+    <!-- <Arrow :transparent="true" class="mt-3" />
     <TokenValidator/>
     <Arrow :transparent="true" class="mt-3" />
-    <TransferValidator/>
+    <TransferValidator/> -->
     <Footer/>
 
   </div>
