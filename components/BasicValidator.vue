@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h2>Basic Validation</h2>
-    <p>Tests can be done with valid <strong>contract address</strong></p>
+    <p>Input a valid<strong>contract address</strong></p>
 
     <form @submit.prevent="sanityCheck" novalidate>
       <div class="input-group input-group-lg">
