@@ -10,10 +10,11 @@
       </thead>
 
       <tbody>
+
         <tr>
-          <td><Icon passed/>Does contract support ERC165</td>
-          <td><Icon failed/>Does contract support ERC721Metadata</td>
-          <td><Icon passed/>Does contract support ERC721Enumerable</td>
+          <td><Icon :passed="{data: null}"/>Does contract support ERC165</td>
+          <td><Icon :passed="{data: true}"/>Does contract support ERC721Metadata</td>
+          <td><Icon :passed="{data: false}"/>Does contract support ERC721Enumerable</td>
         </tr>
         <tr>
           <td><Icon passed/>Does contract support ERC721</td>
@@ -27,7 +28,22 @@
 
 <script>
 import Icon from '~/components/StatusIcon'
+
+  // tests: [
+  //   { 
+  //     id: 1,
+  //     name: "Is address a contract",
+  //     description: "Sanity checks should be greater than 0.",
+  //     category: "ERC721",
+  //     result: null,
+  //     expected: true
+  //   }
+  // ]
+
   export default {
+    props: {
+      data: Array
+    },
     components: {
       Icon
     }
@@ -35,44 +51,5 @@ import Icon from '~/components/StatusIcon'
 </script>
 
 <style scoped lang="scss">
-.table {
-  border-collapse: collapse;
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 1rem;
-  background-color: transparent;
-  
-  thead th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #dee2e6;
-  }
 
-  td, th {
-    padding: .75rem;
-    vertical-align: top;
-    border-top: 1px solid #dee2e6;
-  }
-}
-
-thead {
-  display: table-header-group;
-  vertical-align: middle;
-  border-color: inherit;
-}
-
-th {
-    text-align: inherit;
-}
-
-tr {
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
-}
-
-tbody {
-    display: table-row-group;
-    vertical-align: middle;
-    border-color: inherit;
-}
 </style>

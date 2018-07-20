@@ -33,7 +33,8 @@
 }
 
 .input-group-lg>.input-group-append>.btn {
-  padding: .6rem 2rem;
+  padding: 0 2rem;
+  height: 47px;
 }
 
 .input-group {
@@ -122,6 +123,20 @@
   border-bottom-right-radius: 0;
 }
 
+.custom-select.is-invalid, 
+.form-control.is-invalid, 
+.was-validated .custom-select:invalid, 
+.was-validated .form-control:invalid {
+  border-color: #dc3545;
+}
+
+.invalid-feedback {
+  width: 100%;
+  margin-top: .25rem;
+  font-size: 80%;
+  color: #dc3545;
+}
+
 .input-group {
-  max-width: 600px;
+  max-width: 700px;
 }

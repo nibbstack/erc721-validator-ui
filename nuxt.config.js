@@ -15,11 +15,7 @@ module.exports = {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: meta.description }
     ],
-    link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
-    script: [
-      {src : "https://platform.twitter.com/widgets.js"}
-      // {src: "https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"}
-    ]
+    link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }]
   },
   css: [
     { src: "~/assets/scss/styles.scss" }
@@ -30,6 +26,10 @@ module.exports = {
   loading: {
     color: "#0971FF"
   },
+  plugins: [
+    { src: "~plugins/ga.js", ssr: false },
+    { src: "~plugins/vee-validate.js" }
+  ],
   modules: [
     '@nuxtjs/axios',
     'nuxt-sass-resources-loader'
@@ -38,7 +38,7 @@ module.exports = {
     API_BASE_URL: process.env.API_BASE_URL || 'https://api-staging.0xcert.org'
   },
   axios: {
-    baseURL: process.env.API_BASE_URL
+    baseURL: 'https://api.erc721validator.org'
   },
   build: {
     vendor: [
