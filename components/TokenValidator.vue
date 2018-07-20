@@ -35,22 +35,16 @@
             <tr>
               <th class="row">ERC721</th>
               <th class="row">Metadata extension (optional)</th>
-              <th class="row">Enumerable extension (optional)</th>
-            </tr>
+           </tr>
           </thead>
           <tbody>
             <tr>
               <td><Test :test="test[1]"/></td>
-              <td><Test :test="test[2]"/></td>
-              <td></td>
-            </tr>
-            <tr>
               <td><Test :test="test[0]"/></td>
               <td></td>
-              <td></td>
             </tr>
             <tr>
-              <td></td>
+              <td><Test :test="test[2]"/></td>
               <td></td>
               <td></td>
             </tr>
@@ -143,6 +137,6 @@ import TransitionExpand from '~/components/TransitionExpand';
 }
 
 .row {
-  width: 33%;
+  width: 50%;
 }
 </style>

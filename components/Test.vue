@@ -2,8 +2,8 @@
   <div class="test">
     <div class="test__icon"><Icon :passed="test.result"/></div>
     <div class="test__body">
-      <div class="name">{{ test.name }}</div>
-      <div :class="{show : !test.result && test.result != null}" class="description">{{ test.description }}</div>
+      <div @click="toggleDescription()" class="name">{{ test.name }}</div>
+      <div :class="{show : !test.result && test.result != null && !toggle}" class="description">{{ test.description }}</div>
     </div>
   </div>
 </template>
@@ -14,8 +14,18 @@ import Icon from '~/components/StatusIcon'
     props: {
       test: Object
     },
+    data () {
+      return {
+        toggle: false
+      }
+    },
     components: {
       Icon
+    },
+    methods: {
+      toggleDescription: function () {
+        this.toggle = !this.toggle
+      }
     }
   }
 </script>
@@ -26,6 +36,9 @@ import Icon from '~/components/StatusIcon'
   &__icon {}
 
   &__body {
+    .name {
+      cursor: pointer;
+    }
     .description {
       display: none;
       max-width: 550px;

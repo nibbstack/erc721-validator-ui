@@ -179,7 +179,6 @@ import TransitionExpand from '~/components/TransitionExpand';
         try {
           if (await this.$validator.validate()) {
             this.$store.dispatch('reset')
-            this.$store.commit('showTokenValidator', false)
             this.status = "loading"
             let isContract = await this.$axios.get(`/basic?test=1&contract=${this.contract}`)
             isContract.data.data ? this.validate() : this.state = "invalid"

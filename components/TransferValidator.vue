@@ -1,18 +1,20 @@
 <template>
   <div class="container">
     <h2>Step 3: Transfer Validation</h2>
-    <p>Tests can be done with contract address and a <strong>token approval to giver contract</strong></p>
+    <p>Tests can be done with contract address and a <strong>token approval to giver contract</strong><br/>
+      There can be a business decision that transfers for token are not enabled and by such all test would fail.
+    </p>
     <form @submit.prevent="validate" novalidate>
       <div class="input-group input-group-lg">
         <div class="input-group-prepend">
-          <div class="input-group-text">Giver contract</div>
+          <div class="input-group-text">Approval ID</div>
         </div>
         <input 
-          v-model="giver" 
-          v-validate="'required|wallet'"
-          name="giver"
+          v-model="approval" 
+          v-validate="'required'"
+          name="approval"
           type="text" 
-          :class="{'is-invalid': errors.has('giver') }"
+          :class="{'is-invalid': errors.has('approval') }"
           data-vv-as="Giver contract"
           class="form-control"/>
         <div class="input-group-append">
@@ -24,7 +26,7 @@
           </button>
         </div>
       </div>
-      <div class="invalid-feedback" v-show="errors.has('giver')">{{ errors.first('giver') }}</div>
+      <div class="invalid-feedback" v-show="errors.has('approval')">{{ errors.first('approval') }}</div>
     </form> 
 
     <transition name="fade" mode="out-in">
@@ -69,7 +71,7 @@ import TransitionExpand from '~/components/TransitionExpand';
   export default {
     data () {
       return {
-        giver: '',
+        approval: '',
         state: "inital",
         status: "",
         test: [
@@ -188,12 +190,11 @@ import TransitionExpand from '~/components/TransitionExpand';
           this.state = "results"
           const promises = []
           this.test.forEach(t => promises.push(
-            this.$axios.get(`/transfer?test=${t.id}&contract=${this.$store.state.contract}&token=${this.$store.state.token}&giver=${this.giver}`)
+            this.$axios.get(`/transfer?test=${t.id}&contract=${this.$store.state.contract}&token=${this.approval}&giver=${this.$store.state.giver}`)
           ))
           const results = await Promise.all(promises)
           results.forEach((r, i) => this.test[i].result = r.data.data)
           this.status = ""
-          this.$store.commit('showTransferValidator', true)
         }
         catch (err) {
           console.log(err)
@@ -217,7 +218,4 @@ import TransitionExpand from '~/components/TransitionExpand';
   width: 135px;
 }
 
-.row {
-  width: 50%;
-}
 </style>

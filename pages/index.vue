@@ -9,14 +9,14 @@
           <ul>
             <li>For <strong>Step 1</strong> you only need the contract address.</li>
             <li>For <strong>Step 2</strong> you also need a valid id of any NFT.</li>
-            <li>For <strong>Step 3</strong> you will need to approve a giver contract for a NFT <br/><i>(the token won't be transfered)</i></li>
+            <li><strong>Step 2:</strong> To run this test you need to approve Giver contract: <a href="https://etherscan.io/address/0xa0139F5Ab522c86D7F377336c50EEFCD6cAf696E" target="_blank" rel="noopener">0xa0139F5Ab522c86D7F377336c50EEFCD6cAf696E</a> for a token ID and input the token id bellow. The approved token <strong>WILL NOT</strong> get transfered during the test.</li>
           </ul>
         </p>
 
         <p>Example smart contracts you can test:</p>
         <ul>
           <li><strong>CryptoKitties:</strong> 0x06012c8cf97BEaD5deAe237070F9587f8E7A266d </li>
-          <li><strong>0xcert KYC token:</strong> 0xb57756d92bd170a66b4f361eafbfd13e625372c2 </li>
+          <li><strong>0xcert erc721 implementation: </strong> <a href="https://etherscan.io/address/0xf176d7bcdD07f8e474877095870685Ef0CCcCb2D" target="_blank" rel="noopener">0xf176d7bcdD07f8e474877095870685Ef0CCcCb2D</a>, <strong>Token ID</strong>: 1, <strong>Approval ID:</strong> 1</li>
           <li><strong>Decentraland:</strong> 0xf87e31492faf9a91b02ee0deaad50d51d56d5d4d </li>
         </ul>
       </div>
@@ -84,7 +84,7 @@ export default {
   }
 
   .intro {
-    max-width: 800px;
+    max-width: 650px;
   }
 }
 
