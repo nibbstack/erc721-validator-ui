@@ -7,9 +7,9 @@
           This is a validator that checks if a smart contract fully follows the <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md" target="_blank" rel="noopener">ERC721 standard</a>. <br/>
           Validator is divided in 3 steps depending on the information and actions needed: 
           <ul>
-            <li>For <strong>Step 1</strong> you only need the contract address.</li>
-            <li>For <strong>Step 2</strong> you also need a valid id of any NFT.</li>
-            <li><strong>Step 2:</strong> To run this test you need to approve Giver contract: <a href="https://etherscan.io/address/0xa0139F5Ab522c86D7F377336c50EEFCD6cAf696E" target="_blank" rel="noopener">0xa0139F5Ab522c86D7F377336c50EEFCD6cAf696E</a> for a token ID and input the token id bellow. The approved token <strong>WILL NOT</strong> get transfered during the test.</li>
+            <li>For <strong>Basic validation</strong> you only need the contract address.</li>
+            <li>For <strong>Token validation</strong> you also need a valid ID of any NFT.</li>
+            <li>For <strong>Transfer validation</strong> you need approved token ID 1</li>
           </ul>
         </p>
 
@@ -63,6 +63,14 @@ export default {
 .header {
   background: $light-blue-bg;
   padding: 4rem 0 3rem;
+
+  a {
+    color: $base;
+    
+    &:hover {
+      color: $primary;
+    }
+  }
 
   h1 {
     font-size: 36px;

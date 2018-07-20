@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2>Step 1: Basic Validation</h2>
+    <h2>Basic Validation</h2>
     <p>Tests can be done with valid <strong>contract address</strong></p>
 
     <form @submit.prevent="sanityCheck" novalidate>

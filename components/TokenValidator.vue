@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2>Step 2: Token Validation</h2>
+    <h2>Token Validation</h2>
     <p>Tests can be done with contract address and an <strong>existing token ID</strong></p>
 
     <form @submit.prevent="validate" novalidate>
