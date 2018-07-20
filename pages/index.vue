@@ -2,7 +2,6 @@
   <div class="page">
     <div class="header">
       <div class="container">
-        <img class="logo" src="logo.svg" alt="">
         <h1>ERC721 Validator</h1>
         <p class="intro">
           This is a validator that checks if a smart contract fully follows the <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md" target="_blank" rel="noopener">ERC721 standard</a>. <br/>
@@ -10,7 +9,7 @@
           <ul>
             <li>For <strong>Step 1</strong> you only need the contract address.</li>
             <li>For <strong>Step 2</strong> you also need a valid id of any NFT.</li>
-            <li>For <strong>Step 3</strong> you will need to approve a giver contract for a NFT (the token will never be transfered!).</li>
+            <li>For <strong>Step 3</strong> you will need to approve a giver contract for a NFT <br/><i>(the token won't be transfered)</i></li>
           </ul>
         </p>
 
@@ -56,6 +55,15 @@ export default {
 .header {
   background: $light-blue-bg;
   padding: 4rem 0 3rem;
+
+  h1 {
+    font-size: 36px;
+  }
+
+  > .container {
+    background: url('/validator-logo.svg') no-repeat right 3.4rem;
+    background-size: 200px;
+  }
 
   .logo {
     display: inline-block;
