@@ -36,8 +36,8 @@
           <thead>
             <tr>
               <th class="row">ERC721</th>
-              <th class="row">ERC721 Metadata</th>
-              <th class="row">ERC721 Enumerable</th>
+              <th class="row">Metadata extension (optional)</th>
+              <th class="row">Enumerable extension (optional)</th>
             </tr>
           </thead>
           <tbody>
@@ -178,7 +178,7 @@ import TransitionExpand from '~/components/TransitionExpand';
       sanityCheck: async function() {
         try {
           if (await this.$validator.validate()) {
-            this.$store.commit('setContract', null)
+            this.$store.dispatch('reset')
             this.$store.commit('showTokenValidator', false)
             this.status = "loading"
             let isContract = await this.$axios.get(`/basic?test=1&contract=${this.contract}`)
@@ -202,7 +202,6 @@ import TransitionExpand from '~/components/TransitionExpand';
         results.forEach((r, i) => this.test[i].result = r.data.data)
         this.status = ""
         this.$store.commit('setContract', this.contract)
-        this.$store.commit('showTokenValidator', true)
       }
     },
     components: {

@@ -3,18 +3,18 @@
     <h2>Step 2: Token Validation</h2>
     <p>Tests can be done with contract address and an <strong>existing token ID</strong></p>
 
-    <form @submit.prevent="sanityCheck" novalidate>
+    <form @submit.prevent="validate" novalidate>
       <div class="input-group input-group-lg">
         <div class="input-group-prepend">
           <div class="input-group-text">Token ID</div>
         </div>
         <input 
-          v-model="contract" 
+          v-model="tokenId" 
           v-validate="'required'"
-          name="contract"
+          name="tokenId"
           type="text" 
-          :class="{'is-invalid': errors.has('contract') }"
-          data-vv-as="ETH address"
+          :class="{'is-invalid': errors.has('tokenId') }"
+          data-vv-as="Token ID"
           class="form-control"/>
         <div class="input-group-append">
           <button class="btn btn-primary" type="submit">
@@ -25,7 +25,7 @@
           </button>
         </div>
       </div>
-      <div class="invalid-feedback" v-show="errors.has('contract')">{{ errors.first('contract') }}</div>
+      <div class="invalid-feedback" v-show="errors.has('tokenId')">{{ errors.first('tokenId') }}</div>
     </form> 
 
     <transition name="fade" mode="out-in">
@@ -34,24 +34,24 @@
           <thead>
             <tr>
               <th class="row">ERC721</th>
-              <th class="row">ERC721 Metadata</th>
-              <th class="row">ERC721 Enumerable</th>
+              <th class="row">Metadata extension (optional)</th>
+              <th class="row">Enumerable extension (optional)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><Test :test="test[0]"/></td>
               <td><Test :test="test[1]"/></td>
               <td><Test :test="test[2]"/></td>
+              <td></td>
             </tr>
             <tr>
-              <td><Test :test="test[3]"/></td>
-              <td><Test :test="test[4]"/></td>
-              <td><Test :test="test[5]"/></td>
+              <td><Test :test="test[0]"/></td>
+              <td></td>
+              <td></td>
             </tr>
             <tr>
-              <td><Test :test="test[6]"/></td>
-              <td><Test :test="test[7]"/></td>
+              <td></td>
+              <td></td>
               <td></td>
             </tr>
           </tbody>
@@ -74,7 +74,7 @@ import TransitionExpand from '~/components/TransitionExpand';
   export default {
     data () {
       return {
-        tokenI: '',
+        tokenId: '',
         state: "inital",
         status: "",
         test: [
@@ -107,18 +107,22 @@ import TransitionExpand from '~/components/TransitionExpand';
     },
     methods: {
       validate: async function() {
-        this.status = "loading"
-        this.test.forEach(t => t.result = null)
-        this.state = "results"
-        const promises = []
-        this.test.forEach(t => promises.push(
-          this.$axios.get(`/basic?test=${t.id}&contract=${this.contract}`)
-        ))
-        const results = await Promise.all(promises)
-        results.forEach((r, i) => this.test[i].result = r.data.data)
-        this.status = ""
-        this.$store.commit('setContract', this.contract)
-        this.$store.commit('showTokenValidator', true)
+        try {
+          this.status = "loading"
+          this.test.forEach(t => t.result = null)
+          this.state = "results"
+          const promises = []
+          this.test.forEach(t => promises.push(
+            this.$axios.get(`/token?test=${t.id}&contract=${this.$store.state.contract}&token=${this.tokenId}`)
+          ))
+          const results = await Promise.all(promises)
+          results.forEach((r, i) => this.test[i].result = r.data.data)
+          this.status = ""
+          this.$store.commit('setToken', this.tokenId)
+        }
+        catch (err) {
+          console.log(err)
+        }
       }
     },
     components: {

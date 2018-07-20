@@ -3,19 +3,21 @@ import Vuex from 'vuex'
 const store = () => {
   return new Vuex.Store({
     state: {
-      showTokenValidator: false,
-      showTransferValidator: false,
-      contract: null
+      contract: null,
+      token: null
     },
     mutations: {
-      showTokenValidator(state, open) {
-        state.showTokenValidator = open
-      },
-      showTransferValidator(state, open) {
-        state.showTransferValidator = open
-      },
       setContract(state, address) {
         state.contract = address
+      },
+      setToken(state, token) {
+        state.token = token
+      }
+    },
+    actions: {
+      reset ({ commit }) {
+        commit('setToken', null)
+        commit('setContract', null)
       }
     }
   })

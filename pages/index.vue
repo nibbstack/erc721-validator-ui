@@ -26,12 +26,12 @@
     <BasicValidator/>
 
     <transition-group name="fade">
-      <div v-if="$store.state.showTokenValidator" class="tokenValidator" key="tokenValidator">
+      <div v-if="$store.state.contract" class="tokenValidator" key="tokenValidator">
         <Arrow :transparent="true" class="mt-3" />
         <TokenValidator/>
       </div>
 
-      <div v-if="$store.state.showTransferValidator" class="transferValidator" key="TransferValidator">
+      <div v-if="$store.state.token" class="transferValidator" key="TransferValidator">
         <Arrow :transparent="true" class="mt-3" />
         <TransferValidator/>
       </div>
