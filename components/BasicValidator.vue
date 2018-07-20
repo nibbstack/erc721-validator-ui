@@ -16,7 +16,7 @@
           :class="{'is-invalid': errors.has('contract') }"
           data-vv-as="ETH address"
           class="form-control" 
-          placeholder="Contract address">
+          placeholder="Contract address" />
         <div class="input-group-append">
           <button class="btn btn-primary" type="submit">
             <transition name="fade" mode="out-in">
@@ -30,8 +30,9 @@
     </form> 
 
     <transition name="fade" mode="out-in">
-      <div key="results" v-if="state == 'results'" class="results mt-3">
-        <table class="table">
+      <div key="results" v-if="state == 'results'" class="results mt-2">
+        <Test :test="test[0]"/>
+        <table class="table mt-2">
           <thead>
             <tr>
               <th class="row">ERC721</th>
@@ -41,19 +42,19 @@
           </thead>
           <tbody>
             <tr>
-              <td><Test :test="test[0]"/></td>
               <td><Test :test="test[1]"/></td>
               <td><Test :test="test[2]"/></td>
+              <td><Test :test="test[3]"/></td>
             </tr>
             <tr>
-              <td><Test :test="test[3]"/></td>
               <td><Test :test="test[4]"/></td>
               <td><Test :test="test[5]"/></td>
+              <td><Test :test="test[6]"/></td>
             </tr>
             <tr>
-              <td><Test :test="test[6]"/></td>
               <td><Test :test="test[7]"/></td>
-              <td></td>
+              <td><Test :test="test[8]"/></td>
+              <td><Test :test="test[9]"/></td>
             </tr>
           </tbody>
         </table>
@@ -90,6 +91,14 @@ import TransitionExpand from '~/components/TransitionExpand';
           expected: true
         },
         test: [
+          { 
+            id: 1,
+            name: "Is address a contract",
+            description: "Sanity checks Find the amount of value (ether) assigned to CONTRACT_ADDRESS, it should be greater than or equal to zero. Find the code_size of CONTRACT_ADDRESS, it should be greater than 0.",
+            category: "ERC721",
+            result: false,
+            expected: true
+          },
           { 
             id: 2,
             name: "Does contract support ERC165",
@@ -169,6 +178,8 @@ import TransitionExpand from '~/components/TransitionExpand';
       sanityCheck: async function() {
         try {
           if (await this.$validator.validate()) {
+            this.$store.commit('setContract', null)
+            this.$store.commit('showTokenValidator', false)
             this.status = "loading"
             let isContract = await this.$axios.get(`/basic?test=1&contract=${this.contract}`)
             isContract.data.data ? this.validate() : this.state = "invalid"
@@ -190,6 +201,8 @@ import TransitionExpand from '~/components/TransitionExpand';
         const results = await Promise.all(promises)
         results.forEach((r, i) => this.test[i].result = r.data.data)
         this.status = ""
+        this.$store.commit('setContract', this.contract)
+        this.$store.commit('showTokenValidator', true)
       }
     },
     components: {

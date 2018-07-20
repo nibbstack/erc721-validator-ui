@@ -24,12 +24,20 @@
 
     <Arrow/>
     <BasicValidator/>
-    <!-- <Arrow :transparent="true" class="mt-3" />
-    <TokenValidator/>
-    <Arrow :transparent="true" class="mt-3" />
-    <TransferValidator/> -->
-    <Footer/>
 
+    <transition-group name="fade">
+      <div v-if="$store.state.showTokenValidator" class="tokenValidator" key="tokenValidator">
+        <Arrow :transparent="true" class="mt-3" />
+        <TokenValidator/>
+      </div>
+
+      <div v-if="$store.state.showTransferValidator" class="transferValidator" key="TransferValidator">
+        <Arrow :transparent="true" class="mt-3" />
+        <TransferValidator/>
+      </div>
+    </transition-group>
+
+    <Footer/>
   </div>
 </template>
 
@@ -62,7 +70,7 @@ export default {
 
   > .container {
     background: url('/validator-logo.svg') no-repeat right 3.4rem;
-    background-size: 200px;
+    background-size: 180px;
   }
 
   .logo {
