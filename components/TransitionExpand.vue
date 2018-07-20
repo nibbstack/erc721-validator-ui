@@ -60,11 +60,12 @@ export default {
 <style>
 .expand-enter-active,
 .expand-leave-active {
-  transition: height 0.5s ease-in-out;
+  transition: opacity, height 0.5s ease-in-out;
   overflow: hidden;
 }
 .expand-enter,
 .expand-leave-to {
-  height: 0;
+
+  opacity: 0;
 }
 </style>

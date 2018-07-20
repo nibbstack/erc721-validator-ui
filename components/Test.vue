@@ -3,7 +3,7 @@
     <div class="test__icon"><Icon :passed="test.result"/></div>
     <div class="test__body">
       <div class="name">{{ test.name }}</div>
-      <div :class="{show : !test.result}" class="description">{{ test.description }}</div>
+      <div :class="{show : !test.result && test.result != null}" class="description">{{ test.description }}</div>
     </div>
   </div>
 </template>
@@ -29,7 +29,7 @@ import Icon from '~/components/StatusIcon'
     .description {
       display: none;
       max-width: 550px;
-      padding-top: 1rem;
+      padding-top: .5rem;
       font-size: 13px;
       font-family: $primary-font;
 

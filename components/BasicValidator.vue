@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2>Basic Validation</h2>
+    <h2>Step 1: Basic Validation</h2>
     <p>Tests can be done with valid <strong>contract address</strong></p>
 
     <form @submit.prevent="sanityCheck" novalidate>
@@ -29,8 +29,8 @@
       <div class="invalid-feedback" v-show="errors.has('contract')">{{ errors.first('contract') }}</div>
     </form> 
 
-    <transition-expand>
-      <div v-if="state == 'results'" class="results mt-3">
+    <transition name="fade" mode="out-in">
+      <div key="results" v-if="state == 'results'" class="results mt-3">
         <table class="table">
           <thead>
             <tr>
@@ -41,31 +41,31 @@
           </thead>
           <tbody>
             <tr>
+              <td><Test :test="test[0]"/></td>
               <td><Test :test="test[1]"/></td>
               <td><Test :test="test[2]"/></td>
-              <td><Test :test="test[3]"/></td>
             </tr>
             <tr>
+              <td><Test :test="test[3]"/></td>
               <td><Test :test="test[4]"/></td>
               <td><Test :test="test[5]"/></td>
-              <td><Test :test="test[6]"/></td>
             </tr>
             <tr>
+              <td><Test :test="test[6]"/></td>
               <td><Test :test="test[7]"/></td>
-              <td><Test :test="test[8]"/></td>
               <td></td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div v-if="state == 'invalid'" class="mt-3">
+      <div key="invalid" v-if="state == 'invalid'" class="mt-3">
         <Test :test="sanity"/>
       </div>
-      <div v-if="state == 'error'" class="mt-3">
+      <div key="error" v-if="state == 'error'" class="mt-3">
         Something went wrong.
       </div>
-    </transition-expand>
+    </transition>
 
   </div>
 </template>

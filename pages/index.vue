@@ -13,6 +13,13 @@
             <li>For <strong>Step 3</strong> you will need to approve a giver contract for a NFT (the token will never be transfered!).</li>
           </ul>
         </p>
+
+        <p>Example smart contracts you can test:</p>
+        <ul>
+          <li><strong>CryptoKitties:</strong> 0x06012c8cf97BEaD5deAe237070F9587f8E7A266d </li>
+          <li><strong>0xcert KYC token:</strong> 0xb57756d92bd170a66b4f361eafbfd13e625372c2 </li>
+          <li><strong>Decentraland:</strong> 0xf87e31492faf9a91b02ee0deaad50d51d56d5d4d </li>
+        </ul>
       </div>
     </div>
 
@@ -48,7 +55,7 @@ export default {
 <style scoped lang="scss">
 .header {
   background: $light-blue-bg;
-  padding: 5rem 0 3rem;
+  padding: 4rem 0 3rem;
 
   .logo {
     display: inline-block;
