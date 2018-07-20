@@ -1,9 +1,8 @@
 <template>
   <div class="container">
     <h2>Transfer Validation</h2>
-    <p>To run this test you need to approve Giver contract: <a href="https://etherscan.io/address/0xa0139F5Ab522c86D7F377336c50EEFCD6cAf696E" target="_blank" rel="noopener">0xa0139F5Ab522c86D7F377336c50EEFCD6cAf696E</a> for a token ID and input it bellow. The approved token <strong>WILL NOT</strong> get transfered during the test.<br/>
-      There can be a business decision that transfers for token are not enabled and by such all test would fail.
-    </p>
+    <p class="intro">To run this test you need to approve Giver contract: <a href="https://etherscan.io/address/0xa0139F5Ab522c86D7F377336c50EEFCD6cAf696E" target="_blank" rel="noopener">0xa0139F5Ab522c86D7F377336c50EEFCD6cAf696E</a> for a token ID and input it bellow. The approved token <strong>WILL NOT</strong> get transfered during the test.</p>
+    <p>There can be a business decision that transfers for a token are not enabled and by such all test would fail.</p>
     <form @submit.prevent="validate" novalidate>
       <div class="input-group input-group-lg">
         <div class="input-group-prepend">
@@ -212,6 +211,10 @@ import TransitionExpand from '~/components/TransitionExpand';
 <style scoped lang="scss">
 .invalid-feedback {
   margin-left: 43px;
+}
+
+.intro {
+  max-width: 750px;
 }
 
 .input-group-append .btn {
