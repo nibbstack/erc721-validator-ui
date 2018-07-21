@@ -13,7 +13,7 @@
   export default {
     props: {
       transparent: {
-        default: false
+        type: Boolean
       }
     }
   }
