@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <h2>Transfer Validation</h2>
-    <p class="intro">Approve the Giver contract: <a href="https://etherscan.io/address/0xa0139F5Ab522c86D7F377336c50EEFCD6cAf696E" target="_blank" rel="noopener">0xa0139F5Ab522c86D7F377336c50EEFCD6cAf696E</a> for a token ID and input that tokne ID bellow. The approved token <strong>WILL NOT</strong> get transfered during the test.</p>
-    <p class="smaller">There can be a business decision that transfers for a token are not enabled and by such all test would fail.</p>
+    <p class="intro">Approve the Giver contract: <a href="https://etherscan.io/address/0xa0139F5Ab522c86D7F377336c50EEFCD6cAf696E" target="_blank" rel="noopener">0xa0139F5Ab522c86D7F377336c50EEFCD6cAf696E</a> for a token ID and input it bellow. The approved token <strong>WILL NOT</strong> get transfered during the test.</p>
+    <p class="smaller">There can be a business decision that transfers for a token are not enabled and by such all test will fail.</p>
     <form @submit.prevent="validate" novalidate>
       <div class="input-group input-group-lg">
         <div class="input-group-prepend">
