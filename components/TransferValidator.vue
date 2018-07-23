@@ -3,7 +3,7 @@
     <h2>Transfer Validation</h2>
     <p class="intro">Approve the Giver contract: <a href="https://etherscan.io/address/0xa0139F5Ab522c86D7F377336c50EEFCD6cAf696E" target="_blank" rel="noopener">0xa0139F5Ab522c86D7F377336c50EEFCD6cAf696E</a> for a token ID and input it bellow. The approved token <strong>WILL NOT</strong> get transfered during the test.</p>
     <p class="smaller">There can be a business decision that transfers for a token are not enabled and by such all test will fail.</p>
-    <form @submit.prevent="validate" novalidate>
+    <form @submit.prevent="sanityCheck" novalidate>
       <div class="input-group input-group-lg">
         <div class="input-group-prepend">
           <div class="input-group-text">Token ID</div>
@@ -57,6 +57,10 @@
       <div key="error" v-if="state == 'error'" class="mt-3">
         Something went wrong.
       </div>
+
+      <div key="invalid" v-if="state == 'invalid'" class="mt-3">
+        <Test :test="sanity"/>
+      </div>
     </transition>
 
   </div>
@@ -73,6 +77,14 @@ import TransitionExpand from '~/components/TransitionExpand';
         approval: '',
         state: "inital",
         status: "",
+        sanity: { 
+          id: 14,
+          name: "Transfer unsuccesfull",
+          description: "NFT with above id is either not approved, contract has disabled transfers or transfers don’t work at all.",
+          category: "ERC721",
+          result: false,
+          expected: true
+        },
         test: [
           { 
             id: 1,
@@ -182,6 +194,20 @@ import TransitionExpand from '~/components/TransitionExpand';
       }
     },
     methods: {
+      sanityCheck: async function() {
+        try {
+          if (await this.$validator.validate()) {
+            this.status = "loading"
+            let isTransfer = await this.$axios.get(`/transfer?test=14&contract=${this.$store.state.contract}&token=${this.approval}&giver=${this.$store.state.giver}`)
+            isTransfer.data.data ? this.validate() : this.state = "invalid"
+            this.status = ""
+          }
+        } catch (err) {
+          console.log("Error:" + err)
+          this.state = "error"
+          this.status = ""
+        }
+      },
       validate: async function() {
         try {
           this.status = "loading"
