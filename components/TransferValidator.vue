@@ -69,7 +69,6 @@
 <script>
 import Results from '~/components/Results'
 import Test from '~/components/Test'
-import TransitionExpand from '~/components/TransitionExpand';
 
   export default {
     data () {
@@ -214,31 +213,26 @@ import TransitionExpand from '~/components/TransitionExpand';
           this.test.forEach(t => t.result = null)
           this.state = "results"
           const promises = []
-          this.test.forEach(t => promises.push(
-            this.$axios.get(`/transfer?test=${t.id}&contract=${this.$store.state.contract}&token=${this.approval}&giver=${this.$store.state.giver}`)
-          ))
+          this.test.forEach(t => promises.push(this.$axios.get(`/transfer?test=${t.id}&contract=${this.$store.state.contract}&token=${this.approval}&giver=${this.$store.state.giver}`)))
           const results = await Promise.all(promises)
           results.forEach((r, i) => this.test[i].result = r.data.data)
           this.status = ""
         }
         catch (err) {
-          console.log(err)
+          console.log("Error:" + err)
+          this.state = "error"
+          this.status = ""
         }
       }
     },
     components: {
       Results,
-      Test,
-      TransitionExpand
+      Test
     }
   }
 </script>
 
 <style scoped lang="scss">
-.invalid-feedback {
-  margin-left: 43px;
-}
-
 .intro {
   max-width: 700px;
 }
@@ -246,9 +240,4 @@ import TransitionExpand from '~/components/TransitionExpand';
 .smaller {
   font-size: 13px;
 }
-
-.input-group-append .btn {
-  width: 135px;
-}
-
 </style>

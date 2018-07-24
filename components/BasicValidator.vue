@@ -64,7 +64,7 @@
         <Test :test="sanity"/>
       </div>
       <div key="error" v-if="state == 'error'" class="mt-3">
-        Something went wrong.
+        Unable to connect with a server. Check your internet connection.
       </div>
     </transition>
 
@@ -74,7 +74,6 @@
 <script>
 import Results from '~/components/Results'
 import Test from '~/components/Test'
-import TransitionExpand from '~/components/TransitionExpand';
 
   export default {
     data () {
@@ -194,9 +193,7 @@ import TransitionExpand from '~/components/TransitionExpand';
         this.test.forEach(t => t.result = null)
         this.state = "results"
         const promises = []
-        this.test.forEach(t => promises.push(
-          this.$axios.get(`/basic?test=${t.id}&contract=${this.contract}`)
-        ))
+        this.test.forEach(t => promises.push(this.$axios.get(`/basic?test=${t.id}&contract=${this.contract}`)))
         const results = await Promise.all(promises)
         results.forEach((r, i) => this.test[i].result = r.data.data)
         this.status = ""
@@ -205,21 +202,12 @@ import TransitionExpand from '~/components/TransitionExpand';
     },
     components: {
       Results,
-      Test,
-      TransitionExpand
+      Test
     }
   }
 </script>
 
 <style scoped lang="scss">
-.invalid-feedback {
-  margin-left: 43px;
-}
-
-.input-group-append .btn {
-  width: 135px;
-}
-
 .row {
   width: 33%;
 }

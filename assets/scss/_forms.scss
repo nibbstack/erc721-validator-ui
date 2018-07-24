@@ -53,6 +53,7 @@
   margin-left: -1px;
 
  .btn {
+    width: 135px;
     position: relative;
     z-index: 2;
   }
@@ -133,6 +134,7 @@
 .invalid-feedback {
   width: 100%;
   margin-top: .25rem;
+  margin-left: 43px;
   font-size: 80%;
   color: #dc3545;
 }
@@ -140,3 +142,4 @@
 .input-group {
   max-width: 700px;
 }
+

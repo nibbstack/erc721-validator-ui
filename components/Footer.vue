@@ -9,12 +9,6 @@
 </footer>
 </template>
 
-<script>
-  export default {
-    
-  }
-</script>
-
 <style scoped lang="scss">
 
 footer {
@@ -33,5 +27,4 @@ footer {
     justify-content: space-between;
   }
 }
-
 </style>
