@@ -29,7 +29,7 @@
     </form> 
 
     <transition name="fade" mode="out-in">
-      <div key="results" v-if="state == 'results'" class="results mt-3">
+      <div id="tokenResults" key="results" v-if="state == 'results'" class="results mt-3">
         <table class="table">
           <thead>
             <tr>
@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import Results from '~/components/Results'
+import vueScroll from 'vue-scrollto'
 import Test from '~/components/Test'
 
   export default {
@@ -109,6 +109,7 @@ import Test from '~/components/Test'
           const results = await Promise.all(promises)
           results.forEach((r, i) => this.test[i].result = r.data.data)
           this.status = ""
+          vueScroll.scrollTo('#tokenResults')
           this.$store.commit('setToken', this.tokenId)
         }
         catch (err) {
@@ -119,7 +120,6 @@ import Test from '~/components/Test'
       }
     },
     components: {
-      Results,
       Test
     }
   }

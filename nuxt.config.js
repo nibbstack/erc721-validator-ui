@@ -28,7 +28,8 @@ module.exports = {
   },
   plugins: [
     { src: "~plugins/ga.js", ssr: false },
-    { src: "~plugins/vee-validate.js" }
+    { src: "~plugins/vee-validate.js" },
+    { src: "~plugins/vue-scrollto.js" }
   ],
   modules: [
     '@nuxtjs/axios',
@@ -42,7 +43,8 @@ module.exports = {
   },
   build: {
     vendor: [
-      'axios'
+      'axios',
+      'vue-scrollto'
     ],
   }
 }

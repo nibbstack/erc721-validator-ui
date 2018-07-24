@@ -10,6 +10,7 @@
 
 <script>
 import Icon from '~/components/StatusIcon'
+
   export default {
     props: {
       test: Object

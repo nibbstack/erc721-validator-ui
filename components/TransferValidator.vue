@@ -29,7 +29,7 @@
     </form> 
 
     <transition name="fade" mode="out-in">
-      <div key="results" v-if="state == 'results'" class="results mt-3">
+      <div id="transferResults" key="results" v-if="state == 'results'" class="results mt-3">
         <table class="table">
           <thead>
             <tr>
@@ -67,8 +67,8 @@
 </template>
 
 <script>
-import Results from '~/components/Results'
 import Test from '~/components/Test'
+import vueScroll from 'vue-scrollto'
 
   export default {
     data () {
@@ -215,6 +215,7 @@ import Test from '~/components/Test'
           const promises = []
           this.test.forEach(t => promises.push(this.$axios.get(`/transfer?test=${t.id}&contract=${this.$store.state.contract}&token=${this.approval}&giver=${this.$store.state.giver}`)))
           const results = await Promise.all(promises)
+          vueScroll.scrollTo('#transferResults')
           results.forEach((r, i) => this.test[i].result = r.data.data)
           this.status = ""
         }
@@ -226,7 +227,6 @@ import Test from '~/components/Test'
       }
     },
     components: {
-      Results,
       Test
     }
   }
