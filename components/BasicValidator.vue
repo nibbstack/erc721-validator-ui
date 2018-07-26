@@ -190,6 +190,9 @@ import Test from '~/components/Test'
         }
       },
       validate: async function() {
+        if (!this.$route.query.address) {
+          this.$router.push({ query: { address: this.contract }})
+        }
         this.test.forEach(t => t.result = null)
         this.state = "results"
         const promises = []
@@ -205,6 +208,7 @@ import Test from '~/components/Test'
       const { address } = this.$route.query
       if (address) {
         this.contract = address
+        this.sanityCheck()
       }
     },
     components: {

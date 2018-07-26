@@ -27,13 +27,15 @@ module.exports = {
     color: "#0971FF"
   },
   plugins: [
-    { src: "~plugins/ga.js", ssr: false },
     { src: "~plugins/vee-validate.js" },
     { src: "~plugins/vue-scrollto.js" }
   ],
   modules: [
     '@nuxtjs/axios',
-    'nuxt-sass-resources-loader'
+    'nuxt-sass-resources-loader',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-122962534-1'
+    }]
   ],
   env: {
     API_BASE_URL: process.env.API_BASE_URL || 'https://api-staging.0xcert.org'

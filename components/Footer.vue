@@ -3,6 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="copyright">Powered by <a href="https://0xcert.org">0xcert</a> &copy; 2018</div>
+      <div><a href="https://0xcert.org/?goto=subscribe" target="_blank" rel="noopener">Subscribe for updates</a></div>
       <div><a href="https://github.com/0xcert/erc721-validator" target="_blank" rel="noopener">ERC721 validator on GitHub</a></div>
     </div>
   </div>
