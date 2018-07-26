@@ -177,6 +177,9 @@ import Test from '~/components/Test'
       sanityCheck: async function() {
         try {
           if (await this.$validator.validate()) {
+            if (!this.$route.query.address) {
+              this.$router.push({ query: { address: this.contract }})
+            }
             this.$store.dispatch('reset')
             this.status = "loading"
             let isContract = await this.$axios.get(`/basic?test=1&contract=${this.contract}`)
@@ -190,18 +193,15 @@ import Test from '~/components/Test'
         }
       },
       validate: async function() {
-        if (!this.$route.query.address) {
-          this.$router.push({ query: { address: this.contract }})
-        }
         this.test.forEach(t => t.result = null)
+        vueScroll.scrollTo('#basicResults')
+        this.$store.commit('setContract', this.contract)
         this.state = "results"
         const promises = []
         this.test.forEach(t => promises.push(this.$axios.get(`/basic?test=${t.id}&contract=${this.contract}`)))
         const results = await Promise.all(promises)
-        vueScroll.scrollTo('#basicResults')
         results.forEach((r, i) => this.test[i].result = r.data.data)
         this.status = ""
-        this.$store.commit('setContract', this.contract)
       }
     },
     mounted() {

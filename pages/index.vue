@@ -15,9 +15,9 @@
 
         <p>Example smart contracts you can test:</p>
         <ul>
-          <li><strong>CryptoKitties: </strong><a href="https://etherscan.io/address/0x06012c8cf97BEaD5deAe237070F9587f8E7A266d" target="_blank" rel="noopener">0x06012c8cf97BEaD5deAe237070F9587f8E7A266d</a> </li>
-          <li><strong>0xcert erc721 implementation: </strong> <a href="https://etherscan.io/address/0xf176d7bcdD07f8e474877095870685Ef0CCcCb2D" target="_blank" rel="noopener">0xf176d7bcdD07f8e474877095870685Ef0CCcCb2D</a> <br/><strong>Token ID</strong>: 1, <strong>Approved token ID:</strong> 1</li>
-          <li><strong>Decentraland: </strong><a href="https://etherscan.io/address/0xf87e31492faf9a91b02ee0deaad50d51d56d5d4d" target="_blank" rel="noopener">0xf87e31492faf9a91b02ee0deaad50d51d56d5d4d</a> </li>
+          <li><strong>CryptoKitties: </strong><a href="/?address=0x06012c8cf97BEaD5deAe237070F9587f8E7A266d">0x06012c8cf97BEaD5deAe237070F9587f8E7A266d</a></li>
+          <li><strong>0xcert erc721 implementation: </strong> <a href="/?address=0xf176d7bcdD07f8e474877095870685Ef0CCcCb2D">0xf176d7bcdD07f8e474877095870685Ef0CCcCb2D</a> <br/><strong>Token ID</strong>: 1, <strong>Approved token ID:</strong> 1</li>
+          <li><strong>Decentraland: </strong><a href="/?address=0xf87e31492faf9a91b02ee0deaad50d51d56d5d4d">0xf87e31492faf9a91b02ee0deaad50d51d56d5d4d</a></li>
         </ul>
         <p>Validator currently runs on Etherum Mainnet.</p>
       </div>
