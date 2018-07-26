@@ -201,6 +201,12 @@ import Test from '~/components/Test'
         this.$store.commit('setContract', this.contract)
       }
     },
+    mounted() {
+      const { address } = this.$route.query
+      if (address) {
+        this.contract = address
+      }
+    },
     components: {
       Test
     }
