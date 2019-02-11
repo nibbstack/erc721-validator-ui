@@ -37,11 +37,8 @@ module.exports = {
       id: 'UA-122962534-1'
     }]
   ],
-  env: {
-    API_BASE_URL: process.env.API_BASE_URL || 'https://api-staging.0xcert.org'
-  },
   axios: {
-    baseURL: 'https://api.erc721validator.org'
+    baseURL: process.env.API_BASE_URL
   },
   build: {
     vendor: [

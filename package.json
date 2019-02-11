@@ -4,7 +4,8 @@
   "author": "David Ličen <david.licen@0xcert.org>, Kristijan Sedlak <kristijan@0xcert.org>",
   "scripts": {
     "dev": "nuxt",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "deploy": "./bin/deploy.sh"
   },
   "dependencies": {
     "nuxt": "^1.4.1"
