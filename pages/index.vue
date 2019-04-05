@@ -2,7 +2,7 @@
   <div class="page">
     <div class="header">
       <div class="container">
-        <h1>ERC721 Validator</h1>
+        <h1>ERC-721 Validator</h1>
         <p class="intro">
           This is a validator that checks if a smart contract fully follows the <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md" target="_blank" rel="noopener">ERC721 standard</a>. <br/>
           Validator is divided in 3 steps depending on the information and actions needed: 
@@ -16,7 +16,7 @@
         <p>Example smart contracts you can test:</p>
         <ul>
           <li><strong>CryptoKitties: </strong><a href="/?address=0x06012c8cf97BEaD5deAe237070F9587f8E7A266d">0x06012c8cf97BEaD5deAe237070F9587f8E7A266d</a></li>
-          <li><strong>0xcert erc721 implementation: </strong> <a href="/?address=0xf176d7bcdD07f8e474877095870685Ef0CCcCb2D">0xf176d7bcdD07f8e474877095870685Ef0CCcCb2D</a> <br/><strong>Token ID</strong>: 1, <strong>Approved token ID:</strong> 1</li>
+          <li><strong>0xcert ERC-721 implementation: </strong> <a href="/?address=0xf176d7bcdD07f8e474877095870685Ef0CCcCb2D">0xf176d7bcdD07f8e474877095870685Ef0CCcCb2D</a> <br/><strong>Token ID</strong>: 1, <strong>Approved token ID:</strong> 1</li>
           <li><strong>Decentraland: </strong><a href="/?address=0xf87e31492faf9a91b02ee0deaad50d51d56d5d4d">0xf87e31492faf9a91b02ee0deaad50d51d56d5d4d</a></li>
         </ul>
         <p>Validator currently runs on Etherum Mainnet.</p>
