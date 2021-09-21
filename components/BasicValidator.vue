@@ -76,6 +76,12 @@ import vueScroll from 'vue-scrollto'
 import Test from '~/components/Test'
 
   export default {
+    props: {
+      chainId: {
+        type: Number,
+        default: 1
+      }
+    },
     data () {
       return {
         contract: '',
@@ -182,7 +188,7 @@ import Test from '~/components/Test'
             }
             this.$store.dispatch('reset')
             this.status = "loading"
-            let isContract = await this.$axios.get(`/basic?test=1&contract=${this.contract}`)
+            let isContract = await this.$axios.get(`/basic?test=1&contract=${this.contract}&chainId=${this.chainId}`)
             isContract.data.data ? this.validate() : this.state = "invalid"
             this.status = ""
           }
@@ -198,7 +204,7 @@ import Test from '~/components/Test'
         this.$store.commit('setContract', this.contract)
         this.state = "results"
         const promises = []
-        this.test.forEach(t => promises.push(this.$axios.get(`/basic?test=${t.id}&contract=${this.contract}`)))
+        this.test.forEach(t => promises.push(this.$axios.get(`/basic?test=${t.id}&contract=${this.contract}&chainId=${this.chainId}`)))
         const results = await Promise.all(promises)
         results.forEach((r, i) => this.test[i].result = r.data.data)
         this.status = ""
@@ -218,6 +224,7 @@ import Test from '~/components/Test'
 </script>
 
 <style scoped lang="scss">
+@import '~assets/scss/_config';
 .row {
   width: 33%;
 }

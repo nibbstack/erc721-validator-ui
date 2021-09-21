@@ -4,6 +4,16 @@ let meta = {
 }
 
 module.exports = {
+  /*
+  ** Nuxt rendering mode
+  ** See https://nuxtjs.org/api/configuration-mode
+  */
+  mode: 'universal',
+  /*
+  ** Nuxt target
+  ** See https://nuxtjs.org/api/configuration-target
+  */
+  target: 'static',
   head: {
     title: meta.title,
     meta: [
@@ -18,11 +28,9 @@ module.exports = {
     link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }]
   },
   css: [
-    { src: "~/assets/scss/styles.scss" }
+    '@/assets/scss/styles.scss'
   ],
-  sassResources: [
-    '@/assets/scss/_config.scss'
-  ],
+  // css: [{ src: '~/assets/scss/styles.scss', lang: 'scss' }],
   loading: {
     color: "#0971FF"
   },
@@ -32,7 +40,6 @@ module.exports = {
   ],
   modules: [
     '@nuxtjs/axios',
-    'nuxt-sass-resources-loader',
     ['@nuxtjs/google-analytics', {
       id: 'UA-122962534-1'
     }]

@@ -30,7 +30,7 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .icon {
   display: inline-block;
   margin-right: 1rem;

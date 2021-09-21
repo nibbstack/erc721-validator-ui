@@ -65,6 +65,12 @@ import vueScroll from 'vue-scrollto'
 import Test from '~/components/Test'
 
   export default {
+     props: {
+      chainId: {
+        type: Number,
+        default: 1
+      }
+    },
     data () {
       return {
         tokenId: '',
@@ -105,7 +111,7 @@ import Test from '~/components/Test'
           this.test.forEach(t => t.result = null)
           this.state = "results"
           const promises = []
-          this.test.forEach(t => promises.push(this.$axios.get(`/token?test=${t.id}&contract=${this.$store.state.contract}&token=${this.tokenId}`)))
+          this.test.forEach(t => promises.push(this.$axios.get(`/token?test=${t.id}&contract=${this.$store.state.contract}&token=${this.tokenId}&chainId=${this.chainId}`)))
           const results = await Promise.all(promises)
           results.forEach((r, i) => this.test[i].result = r.data.data)
           this.status = ""
@@ -126,6 +132,7 @@ import Test from '~/components/Test'
 </script>
 
 <style scoped lang="scss">
+@import '~assets/scss/_config';
 .row {
   width: 50%;
 }

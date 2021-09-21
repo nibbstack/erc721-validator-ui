@@ -20,6 +20,7 @@
 </script>
 
 <style scoped lang="scss">
+  @import '~assets/scss/_config';
   .separator {
     border-top: 1px solid $gray-light;
   }

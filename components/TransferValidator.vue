@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h2>Transfer Validation</h2>
-    <p class="intro">Approve the Giver contract: <a href="https://etherscan.io/address/0xa0139F5Ab522c86D7F377336c50EEFCD6cAf696E" target="_blank" rel="noopener">0xa0139F5Ab522c86D7F377336c50EEFCD6cAf696E</a> for a token ID and input it bellow. The approved token <strong>WILL NOT</strong> get transfered during the test.</p>
+    <p class="intro">Approve the Giver contract: <a :href="this.explorerLinks[this.chainId] + this.giverContracts[this.chainId]" target="_blank" rel="noopener">{{ this.giverContracts[this.chainId] }}</a> for a token ID and input it bellow. The approved token <strong>WILL NOT</strong> get transfered during the test.</p>
     <p class="smaller">There can be a business decision that transfers for a token are not enabled and by such all test will fail.</p>
     <form @submit.prevent="sanityCheck" novalidate>
       <div class="input-group input-group-lg">
@@ -71,11 +71,27 @@ import Test from '~/components/Test'
 import vueScroll from 'vue-scrollto'
 
   export default {
+     props: {
+      chainId: {
+        type: Number,
+        default: 1
+      }
+    },
     data () {
       return {
         approval: '',
         state: "inital",
         status: "",
+        giverContracts: {
+          1: '0xa0139F5Ab522c86D7F377336c50EEFCD6cAf696E',
+          3: '0x0867cd9331287d18cb7cd40eb00628ea842d1bca',
+          4: '0x40Bf8f5F5Deb968744CA5fD29321Cb9D456C2877'
+        },
+        explorerLinks: {
+          1: 'https://etherscan.io/address/',
+          3: 'https://ropsten.etherscan.io/address/',
+          4: 'https://rinkeby.etherscan.io/address/'
+        },
         sanity: { 
           id: 14,
           name: "Transfer unsuccesfull",
@@ -197,7 +213,7 @@ import vueScroll from 'vue-scrollto'
         try {
           if (await this.$validator.validate()) {
             this.status = "loading"
-            let isTransfer = await this.$axios.get(`/transfer?test=14&contract=${this.$store.state.contract}&token=${this.approval}&giver=${this.$store.state.giver}`)
+            let isTransfer = await this.$axios.get(`/transfer?test=14&contract=${this.$store.state.contract}&token=${this.approval}&giver=${this.giverContracts[this.chainId]}&chainId=${this.chainId}`)
             isTransfer.data.data ? this.validate() : this.state = "invalid"
             this.status = ""
           }
@@ -213,7 +229,7 @@ import vueScroll from 'vue-scrollto'
           this.test.forEach(t => t.result = null)
           this.state = "results"
           const promises = []
-          this.test.forEach(t => promises.push(this.$axios.get(`/transfer?test=${t.id}&contract=${this.$store.state.contract}&token=${this.approval}&giver=${this.$store.state.giver}`)))
+          this.test.forEach(t => promises.push(this.$axios.get(`/transfer?test=${t.id}&contract=${this.$store.state.contract}&token=${this.approval}&giver=${this.giverContracts[this.chainId]}&chainId=${this.chainId}`)))
           const results = await Promise.all(promises)
           vueScroll.scrollTo('#transferResults')
           results.forEach((r, i) => this.test[i].result = r.data.data)
@@ -233,6 +249,7 @@ import vueScroll from 'vue-scrollto'
 </script>
 
 <style scoped lang="scss">
+@import '~assets/scss/_config';
 .intro {
   max-width: 700px;
 }
