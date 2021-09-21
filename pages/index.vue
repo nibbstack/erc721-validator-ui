@@ -19,22 +19,34 @@
           <li><strong>0xcert ERC-721 implementation: </strong> <a href="/?address=0xf176d7bcdD07f8e474877095870685Ef0CCcCb2D">0xf176d7bcdD07f8e474877095870685Ef0CCcCb2D</a> <br/><strong>Token ID</strong>: 1, <strong>Approved token ID:</strong> 1</li>
           <li><strong>Decentraland: </strong><a href="/?address=0xf87e31492faf9a91b02ee0deaad50d51d56d5d4d">0xf87e31492faf9a91b02ee0deaad50d51d56d5d4d</a></li>
         </ul>
-        <p>Validator currently runs on Etherum Mainnet.</p>
+        <p>If you want to know how the validator works check the <a href="https://medium.com/hackernoon/https-medium-com-momannn-live-testing-smart-contracts-with-estimategas-f45429086c3a" target="_blank">article here</a>.</p>
       </div>
     </div>
 
     <Arrow/>
-    <BasicValidator/>
+
+    <div class="container">
+      <h2>Network</h2>
+      <p>Select blockchain network on which you want to validate ERC-721 contract.</p>
+      <select v-model="selected" class="form-control">
+        <option v-for="option in networks" v-bind:value="option.value">
+          {{ option.text }}
+        </option>
+      </select>
+    </div>
+
+    <Arrow transparent class="mt-3" />
+    <BasicValidator :chain-id=selected />
 
     <transition-group name="fade">
       <div v-if="$store.state.contract" class="tokenValidator" key="tokenValidator">
         <Arrow transparent class="mt-3" />
-        <TokenValidator/>
+        <TokenValidator :chain-id=selected />
       </div>
 
       <div v-if="$store.state.token" class="transferValidator" key="TransferValidator">
         <Arrow transparent class="mt-3" />
-        <TransferValidator/>
+        <TransferValidator :chain-id=selected />
       </div>
     </transition-group>
 
@@ -56,11 +68,33 @@ export default {
     TokenValidator,
     TransferValidator,
     Footer
-  }
+  },
+   data () {
+      return {
+        networks: [{
+          text: 'Ethereum Mainnet',
+          value: 1
+        }, {
+          text: 'Ethereum Ropsten',
+          value: 3
+        }, {
+          text: 'Ethereum Rinkeby',
+          value: 4
+        }],
+        selected: 1,
+      }
+   },
+  mounted() {
+    const { chainId } = this.$route.query
+    if (chainId) {
+      this.selected = chainId
+    }
+  },
 }
 </script>
 
 <style scoped lang="scss">
+@import '~assets/scss/_config';
 .header {
   background: $light-blue-bg;
   padding: 4rem 0 3rem;

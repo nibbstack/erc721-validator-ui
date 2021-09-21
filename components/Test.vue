@@ -32,6 +32,7 @@ import Icon from '~/components/StatusIcon'
 </script>
 
 <style scoped lang="scss">
+@import '~assets/scss/_config';
 .test {
   display: flex;
   &__icon {}

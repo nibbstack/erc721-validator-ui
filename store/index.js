@@ -5,7 +5,6 @@ const store = () => {
     state: {
       contract: null,
       token: null,
-      giver: '0xa0139F5Ab522c86D7F377336c50EEFCD6cAf696E'
     },
     mutations: {
       setContract(state, address) {
