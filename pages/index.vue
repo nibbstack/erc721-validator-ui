@@ -29,7 +29,7 @@
       <h2>Network</h2>
       <p>Select blockchain network on which you want to validate ERC-721 contract.</p>
       <select v-model="selected" class="form-control">
-        <option v-for="option in networks" v-bind:value="option.value">
+        <option v-for="option in networks" v-bind:key="option.text" v-bind:value="option.value">
           {{ option.text }}
         </option>
       </select>
