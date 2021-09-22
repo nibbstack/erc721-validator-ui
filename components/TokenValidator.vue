@@ -113,7 +113,10 @@ import Test from '~/components/Test'
           const promises = []
           this.test.forEach(t => promises.push(this.$axios.get(`/token?test=${t.id}&contract=${this.$store.state.contract}&token=${this.tokenId}&chainId=${this.chainId}`)))
           const results = await Promise.all(promises)
-          results.forEach((r, i) => this.test[i].result = r.data.data)
+          results.forEach((r, i) => { 
+            this.test[i].result = r.data.data.result;
+            this.test[i].gas = r.data.data.gas;
+          })
           this.status = ""
           vueScroll.scrollTo('#tokenResults')
           this.$store.commit('setToken', this.tokenId)

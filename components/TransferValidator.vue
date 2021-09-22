@@ -232,7 +232,10 @@ import vueScroll from 'vue-scrollto'
           this.test.forEach(t => promises.push(this.$axios.get(`/transfer?test=${t.id}&contract=${this.$store.state.contract}&token=${this.approval}&giver=${this.giverContracts[this.chainId]}&chainId=${this.chainId}`)))
           const results = await Promise.all(promises)
           vueScroll.scrollTo('#transferResults')
-          results.forEach((r, i) => this.test[i].result = r.data.data)
+          results.forEach((r, i) => { 
+            this.test[i].result = r.data.data.result;
+            this.test[i].gas = r.data.data.gas;
+          })
           this.status = ""
         }
         catch (err) {
