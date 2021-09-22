@@ -189,7 +189,7 @@ import Test from '~/components/Test'
             this.$store.dispatch('reset')
             this.status = "loading"
             let isContract = await this.$axios.get(`/basic?test=1&contract=${this.contract}&chainId=${this.chainId}`)
-            isContract.data.data ? this.validate() : this.state = "invalid"
+            isContract.data.data.result ? this.validate() : this.state = "invalid"
             this.status = ""
           }
         } catch (err) {
@@ -206,7 +206,10 @@ import Test from '~/components/Test'
         const promises = []
         this.test.forEach(t => promises.push(this.$axios.get(`/basic?test=${t.id}&contract=${this.contract}&chainId=${this.chainId}`)))
         const results = await Promise.all(promises)
-        results.forEach((r, i) => this.test[i].result = r.data.data)
+        results.forEach((r, i) => { 
+          this.test[i].result = r.data.data.result;
+          this.test[i].gas = r.data.data.gas;
+        })
         this.status = ""
       }
     },

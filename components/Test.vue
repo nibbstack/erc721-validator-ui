@@ -3,6 +3,7 @@
     <div class="test__icon"><Icon :passed="test.result"/></div>
     <div class="test__body">
       <div @click="toggleDescription()" class="name">{{ test.name }}</div>
+      <div class="gas">Gas used: {{ test.gas ? test.gas : 'undefined' }}</div>
       <div :class="{show : !test.result && test.result != null && !toggle}" class="description">{{ test.description }}</div>
     </div>
   </div>
@@ -35,7 +36,9 @@ import Icon from '~/components/StatusIcon'
 @import '~assets/scss/_config';
 .test {
   display: flex;
-  &__icon {}
+  &__icon {
+      padding-top: .3rem;
+  }
 
   &__body {
     .name {
@@ -51,6 +54,13 @@ import Icon from '~/components/StatusIcon'
       &.show {
         display: block
       }
+    }
+
+    .gas {
+      max-width: 550px;
+      font-size: 10px;
+      color: $gray;
+      font-family: $primary-font;
     }
   }
 }
