@@ -1,0 +1,19 @@
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+    <path d="M13.672 23.353a11.5 11.5 0 0 0 9.877-11.384c0-6.352-5.149-11.5-11.5-11.5v2.875a8.625 8.625 0 0 1 1.217 17.163l.406 2.846z" fill="url(#loader)">
+        <animateTransform 
+            attributeType="xml" 
+            attributeName="transform"
+            type="rotate"
+            from="0 12 12"
+            to="360 12 12"
+            dur="1s"
+            repeatCount="indefinite"/>
+    </path>
+    <defs>
+        <linearGradient id="loader" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(-135.605 11.52 -.725) scale(9.07301)">
+        <stop offset="0" stop-color="#fff"/>
+        <stop offset=".47" stop-color="#fff" stop-opacity=".227"/>
+        <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+    </defs>
+</svg>

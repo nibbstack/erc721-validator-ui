@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="245px" height="245px" viewBox="0 0 245 245" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>0XCERT-validation-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="55" height="136"></rect>
+        <rect id="path-3" x="0" y="0" width="55" height="136"></rect>
+        <linearGradient x1="18.835109%" y1="50%" x2="96.3353504%" y2="50%" id="linearGradient-5">
+            <stop stop-color="#F7FBFC" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#EBF5F7" stop-opacity="0.9" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-6" x="1" y="1" width="102" height="203"></rect>
+        <pattern id="pattern-7" width="22.5" height="22.5" x="-21.5" y="-21.5" patternUnits="userSpaceOnUse">
+            <use xlink:href="#image-8" transform="scale(0.45,0.45)"></use>
+        </pattern>
+        <image id="image-8" width="50" height="50" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAEGWlDQ1BrQ0dDb2xvclNwYWNlR2VuZXJpY1JHQgAAOI2NVV1oHFUUPrtzZyMkzlNsNIV0qD8NJQ2TVjShtLp/3d02bpZJNtoi6GT27s6Yyc44M7v9oU9FUHwx6psUxL+3gCAo9Q/bPrQvlQol2tQgKD60+INQ6Ium65k7M5lpurHeZe58853vnnvuuWfvBei5qliWkRQBFpquLRcy4nOHj4g9K5CEh6AXBqFXUR0rXalMAjZPC3e1W99Dwntf2dXd/p+tt0YdFSBxH2Kz5qgLiI8B8KdVy3YBevqRHz/qWh72Yui3MUDEL3q44WPXw3M+fo1pZuQs4tOIBVVTaoiXEI/MxfhGDPsxsNZfoE1q66ro5aJim3XdoLFw72H+n23BaIXzbcOnz5mfPoTvYVz7KzUl5+FRxEuqkp9G/Ajia219thzg25abkRE/BpDc3pqvphHvRFys2weqvp+krbWKIX7nhDbzLOItiM8358pTwdirqpPFnMF2xLc1WvLyOwTAibpbmvHHcvttU57y5+XqNZrLe3lE/Pq8eUj2fXKfOe3pfOjzhJYtB/yll5SDFcSDiH+hRkH25+L+sdxKEAMZahrlSX8ukqMOWy/jXW2m6M9LDBc31B9LFuv6gVKg/0Szi3KAr1kGq1GMjU/aLbnq6/lRxc4XfJ98hTargX++DbMJBSiYMIe9Ck1YAxFkKEAG3xbYaKmDDgYyFK0UGYpfoWYXG+fAPPI6tJnNwb7ClP7IyF+D+bjOtCpkhz6CFrIa/I6sFtNl8auFXGMTP34sNwI/JhkgEtmDz14ySfaRcTIBInmKPE32kxyyE2Tv+thKbEVePDfW/byMM1Kmm0XdObS7oGD/MypMXFPXrCwOtoYjyyn7BV29/MZfsVzpLDdRtuIZnbpXzvlf+ev8MvYr/Gqk4H/kV/G3csdazLuyTMPsbFhzd1UabQbjFvDRmcWJxR3zcfHkVw9GfpbJmeev9F08WW8uDkaslwX6avlWGU6NRKz0g/SHtCy9J30o/ca9zX3Kfc19zn3BXQKRO8ud477hLnAfc1/G9mrzGlrfexZ5GLdn6ZZrrEohI2wVHhZywjbhUWEy8icMCGNCUdiBlq3r+xafL549HQ5jH+an+1y+LlYBifuxAvRN/lVVVOlwlCkdVm9NOL5BE4wkQ2SMlDZU97hX86EilU/lUmkQUztTE6mx1EEPh7OmdqBtAvv8HdWpbrJS6tJj3n0CWdM6busNzRV3S9KTYhqvNiqWmuroiKgYhshMjmhTh9ptWhsF7970j/SbMrsPE1suR5z7DMC+P/Hs+y7ijrQAlhyAgccjbhjPygfeBTjzhNqy28EdkUh8C+DU9+z2v/oyeH791OncxHOs5y2AtTc7nb/f73TWPkD/qwBnjX8BoJ98VQNcC+8AAADKSURBVGgF7ZgxCsQwDATjvMb/f41/k1QGF9oikWBBzDU5lpwUzejAZFwfPnPOZ9++1hr7e+X1b4+78iGctRjEST/qjZGIijPDiJN+1BsjERVn1sbIOI8ETqLZ3m2MtBnk0wn2XENOv9k/g/h9m9ViEGHYFmPEhl40xogAY4sxYkMvGmNEgLHFGLGhF40xIsDYYozY0IvGGBFgbHEbI7ygs+2QaNxntcSAYcwLuhBLbdhmtRikdjHy1TCSZ1hbASO1PPPVMJJnWFvhBRthG07MMgb9AAAAAElFTkSuQmCC"></image>
+    </defs>
+    <g id="0XCERT-validation-icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(20.000000, 20.000000)">
+            <path d="M102.5,196 C154.138624,196 196,154.138624 196,102.5 C196,50.8613759 154.138624,9 102.5,9" id="Oval" stroke="#2C2F31" stroke-width="2" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M149.25,149.25 C149.25,97.6113759 107.388624,55.75 55.75,55.75 C4.11137589,55.75 -37.75,97.6113759 -37.75,149.25" id="Oval" stroke="#3689FF" stroke-width="2" fill="#FFFFFF" opacity="0.221819196" stroke-linecap="round" stroke-linejoin="round" transform="translate(55.750000, 102.500000) rotate(-90.000000) translate(-55.750000, -102.500000) "></path>
+            <g id="Fill-1" transform="translate(103.000000, 38.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask"></g>
+                <path d="M37.7725451,18 L-11.5107737,67.2829104 L-4.99794125,73.7953343 C-4.16218766,74.6314964 -4.16218766,75.9864302 -4.99794125,76.8221838 L-14.1630455,85.9876965 C-14.9987991,86.8234501 -16.3541414,86.8234501 -17.189895,85.9876965 L-34.5716089,68.6059826 C-35.4122643,67.7653273 -35.4065455,66.3993644 -34.5577205,65.5660617 L13.862068,18 L-11.4274434,18 L-5.61924194,23.80861 C-4.77450175,24.6529417 -4.7847138,26.0250318 -5.64129995,26.857109 L-14.9661205,35.9135571 C-15.805142,36.7284781 -17.1433281,36.7186746 -17.970912,35.8914991 L-35.8620026,18 L-45.4629568,18 C-47.4085552,18 -49,19.5914448 -49,21.5370432 L-49,114.462548 C-49,116.408147 -47.4085552,118 -45.4629568,118 L-36.3436026,118 L13.5099567,68.1464407 L6.99712429,61.6336082 C6.1613707,60.7978547 6.1613707,59.4429208 6.99712429,58.6071672 L16.162637,49.442063 C16.9983906,48.6059009 18.3537329,48.6059009 19.1894865,49.442063 L36.5707919,66.8229599 C37.4118558,67.6644323 37.4057285,69.0299866 36.557312,69.8632893 L-12.4433375,118 L13.9972754,118 L7.61842498,111.62115 C6.77409327,110.776409 6.78389683,109.404319 7.64089147,108.572242 L16.9653036,99.5157939 C17.8047335,98.7008729 19.1429196,98.7106765 19.9700951,99.537852 L38.3652521,117.933009 L47.4625484,118 C49.4081468,118 50.9995915,116.408147 50.9995915,114.462548 L50.9995915,21.5370432 C50.9995915,19.5914448 49.4077383,18 47.4625484,18 L37.7725451,18 Z" fill="#3689FF" mask="url(#mask-2)"></path>
+            </g>
+            <g id="Fill-1" transform="translate(48.000000, 38.000000)">
+                <mask id="mask-4" fill="white">
+                    <use xlink:href="#path-3"></use>
+                </mask>
+                <g id="Mask"></g>
+                <path d="M92.7725451,18 L43.4892263,67.2829104 L50.0020587,73.7953343 C50.8378123,74.6314964 50.8378123,75.9864302 50.0020587,76.8221838 L40.8369545,85.9876965 C40.0012009,86.8234501 38.6458586,86.8234501 37.810105,85.9876965 L20.4283911,68.6059826 C19.5877357,67.7653273 19.5934545,66.3993644 20.4422795,65.5660617 L68.862068,18 L43.5725566,18 L49.3807581,23.80861 C50.2254982,24.6529417 50.2152862,26.0250318 49.3587,26.857109 L40.0338795,35.9135571 C39.194858,36.7284781 37.8566719,36.7186746 37.029088,35.8914991 L19.1379974,18 L9.53704316,18 C7.59144476,18 6,19.5914448 6,21.5370432 L6,114.462548 C6,116.408147 7.59144476,118 9.53704316,118 L18.6563974,118 L68.5099567,68.1464407 L61.9971243,61.6336082 C61.1613707,60.7978547 61.1613707,59.4429208 61.9971243,58.6071672 L71.162637,49.442063 C71.9983906,48.6059009 73.3537329,48.6059009 74.1894865,49.442063 L91.5707919,66.8229599 C92.4118558,67.6644323 92.4057285,69.0299866 91.557312,69.8632893 L42.5566625,118 L68.9972754,118 L62.618425,111.62115 C61.7740933,110.776409 61.7838968,109.404319 62.6408915,108.572242 L71.9653036,99.5157939 C72.8047335,98.7008729 74.1429196,98.7106765 74.9700951,99.537852 L93.3652521,117.933009 L102.462548,118 C104.408147,118 105.999592,116.408147 105.999592,114.462548 L105.999592,21.5370432 C105.999592,19.5914448 104.407738,18 102.462548,18 L92.7725451,18 Z" stroke="#3689FF" stroke-width="2" opacity="0.32" mask="url(#mask-4)"></path>
+            </g>
+            <circle id="Oval-2" stroke="#D3E6FF" stroke-width="2" fill="#FFFFFF" cx="54" cy="101" r="3"></circle>
+            <circle id="Oval-2" stroke="#D3E6FF" stroke-width="2" fill="#FFFFFF" cx="55" cy="155" r="3"></circle>
+            <circle id="Oval-2" stroke="#D3E6FF" stroke-width="2" fill="#FFFFFF" cx="85" cy="74" r="3"></circle>
+            <polyline id="Line-4" stroke="#B0C8D3" stroke-width="2" stroke-linecap="square" transform="translate(15.764122, 189.027366) rotate(-90.000000) translate(-15.764122, -189.027366) " points="30.7914875 174.263244 0.736755684 174.263244 0.736755684 203.791487"></polyline>
+            <polyline id="Line-4" stroke="#B0C8D3" stroke-width="2" stroke-linecap="square" transform="translate(188.922308, 189.027366) scale(-1, 1) rotate(-90.000000) translate(-188.922308, -189.027366) " points="203.949673 174.263244 173.894942 174.263244 173.894942 203.791487"></polyline>
+            <polyline id="Line-4" stroke="#B0C8D3" stroke-width="2" stroke-linecap="square" transform="translate(189.080493, 15.366394) scale(-1, 1) translate(-189.080493, -15.366394) " points="204.107859 0.602272727 174.053128 0.602272727 174.053128 30.1305159"></polyline>
+            <polyline id="Line-4" stroke="#B0C8D3" stroke-width="2" stroke-linecap="square" points="30.9496734 0.602272727 0.894941634 0.602272727 0.894941634 30.1305159"></polyline>
+            <g id="Rectangle-2">
+                <use fill="url(#linearGradient-5)" xlink:href="#path-6"></use>
+                <use fill-opacity="0.02" fill="url(#pattern-7)" xlink:href="#path-6"></use>
+            </g>
+            <path d="M103,1 L103,204" id="Line-14" stroke="#DFE7EB" stroke-width="2" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>
