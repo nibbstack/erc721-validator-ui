@@ -112,7 +112,7 @@ export default {
   }
 
   > .container {
-    background: url('/validator-logo.svg') no-repeat right 3.4rem;
+    // background: url('/validator-logo.svg') no-repeat right 3.4rem;
     background-size: 180px;
   }
 

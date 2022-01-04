@@ -1,7 +1,7 @@
 {
   "name": "validator",
   "version": "1.0.0",
-  "author": "David Ličen <david.licen@0xcert.org>, Kristijan Sedlak <kristijan@0xcert.org>",
+  "author": "Kristijan Sedlak <xpepermint@gmail.com>",
   "scripts": {
     "dev": "nuxt",
     "generate": "nuxt generate",

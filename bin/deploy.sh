@@ -10,7 +10,7 @@ git init
 git add -A
 git commit -m "Deploy website"
 echo "Deploying to GitHub pages..."
-git push -f git@github.com:0xcert/erc721-validator-ui.git master:gh-pages
+git push -f git@github.com:nibbstack/erc721-validator-ui.git master:gh-pages
 cd -
 echo ''
 echo '-------------------------------------------------'

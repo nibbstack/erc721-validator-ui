@@ -2,10 +2,10 @@
 <footer>
   <div class="container">
     <div class="row">
-      <div class="copyright">Powered by <a href="https://0xcert.org">0xcert</a> &copy; 2021</div>
-      <div><a href="https://0xcert.org/?goto=subscribe" target="_blank" rel="noopener">Subscribe for updates</a></div>
-      <div>Accepting donations: <a target="_blank" href="https://etherscan.io/address/0xf9196f9f176fd2ef9243e8960817d5fbe63d79aa">0xF9196F9f176fd2eF9243E8960817d5FbE63D79aa</a></div>
-      <div><a href="https://github.com/0xcert/erc721-validator" target="_blank" rel="noopener">ERC721 validator on GitHub</a></div>
+      <div class="copyright">Powered by <a href="https://nibbstack.com">Nibbstack</a> &copy; 2021</div>
+      <div><a href="https://nibbstack.com/?goto=subscribe" target="_blank" rel="noopener">Subscribe for updates</a></div>
+      <!-- <div>Accepting donations: <a target="_blank" href="https://etherscan.io/address/0x...">0xF9196F9f176fd2eF9243E8960817d5FbE63D79aa</a></div> -->
+      <div><a href="https://github.com/nibbstack/erc721-validator" target="_blank" rel="noopener">ERC721 validator on GitHub</a></div>
     </div>
   </div>
 </footer>
